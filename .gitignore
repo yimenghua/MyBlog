@@ -1,0 +1,5 @@
+.git
+/server/.idea
+/files
+/web/node_modules
+/web/dist
