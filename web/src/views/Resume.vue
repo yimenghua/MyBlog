@@ -7,14 +7,14 @@
 
 
 <script>
-import resumePic  from '../assets/我的简历.jpg'
+import resumePic  from '../assets/resume.jpg'
 import global_msg from '../global.js'
 export default {
     name: "Resume",
     data(){
         return{
             resumePic : resumePic,
-            resumePDFLink: global_msg.host + "/files/易梦华简历.pdf"
+            resumePDFLink: global_msg.host + "/files/resume.pdf"
         }
     },
 }

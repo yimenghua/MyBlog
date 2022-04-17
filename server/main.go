@@ -11,5 +11,5 @@ func main() {
 
 	r.Static("/MyBlog", "../web/dist")
 
-	r.Run(":8081")
+	r.Run(":8080")
 }
