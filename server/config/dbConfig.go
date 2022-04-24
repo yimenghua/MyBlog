@@ -2,8 +2,8 @@ package config
 
 const (
 	MysqlUserName = "root"
-	MysqlPassword = "yimenghua823"
-	MysqlHost     = "112.74.84.181"
+	MysqlPassword = "password"
+	MysqlHost     = "host"
 	MysqlPort     = 3306
-	MysqlDbName   = "myblog"
+	MysqlDbName   = "dbname"
 )
