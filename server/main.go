@@ -1,15 +1,25 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	_ "github.com/go-sql-driver/mysql"
+	"server/dao"
+	"server/logs"
+	"server/router"
 )
 
 func main() {
-	r := gin.Default()
 
-	r.Static("/files", "../files")
+	logs.InitLog()      //初始日志输出
+	dao.InitDb()        //初始化数据库
+	router.InitRouter() //初始化路由
 
-	r.Static("/MyBlog", "../web/dist")
+	//程序结束前关闭数据库连接
+	if dao.MySqlDB != nil {
+		defer dao.MySqlDB.Close()
+	}
 
-	r.Run(":8080")
+	//启动服务
+	if router.Router != nil {
+		router.Router.Run(":8080")
+	}
 }
